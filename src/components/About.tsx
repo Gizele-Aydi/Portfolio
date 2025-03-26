@@ -185,7 +185,7 @@ const About = () => {
                 variants={imageVariants}
               >
                 <Image
-                  src="/sources/cv pic.jpg"
+                  src="/sources/my_pic.jpg"
                   alt="Gisele"
                   fill
                   sizes="(max-width: 768px) 100vw, 320px"
