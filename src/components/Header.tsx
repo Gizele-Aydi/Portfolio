@@ -21,7 +21,7 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: "/sources/Gisele Aydi Resume", external: true },
+    { name: "Resume", href: "/sources/Gisele Aydi Resume.pdf", external: true },
   ]
 
   return (
