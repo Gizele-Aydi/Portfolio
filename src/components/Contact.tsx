@@ -24,8 +24,7 @@ const Contact = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        I&apos;m currently looking for new opportunities (internships, part-time jobs). Whether you have a question or
-        just want to say hi, I&apos;ll get back to you!
+        I&apos;m open to new opportunities, including internships and part-time roles. Feel free to reach out—I&apos;d love to connect!,
       </motion.div>
 
       <motion.div
