@@ -8,21 +8,21 @@ const projects = [
   {
     title: "Netflix BI Analysis",
     description:
-      "Performs Netflix BI analysis using data from CSV, Excel, and JSON formats. The data is cleaned with Pandas and visualized with Matplotlib. Stored in a MySQL data warehouse, data modeling is performed to identify facts and create dimensions.",
+      "Performs Netflix BI analysis using CSV, Excel, and JSON data. Cleaned with Pandas, stored in a MySQL data warehouse, and modeled for fact and dimension analysis. Visualized through interactive Power BI dashboards and Matplotlib.",
     technologies: ["Python", "Pandas", "Matplotlib", "MySQL", "Power BI"],
     github: "https://github.com/Gizele-Aydi/Netflix-BI-analysis",
   },
   {
     title: "Car Resale Data Analysis Management System",
     description:
-      "Manages used car resale data through a Java-based system, enabling data upload, cleaning, processing, and analysis. The system performs regression, correlation, and exploratory data analysis (EDA).",
+      "Manages used car resale data through a Java-based system with an interface for data upload, cleaning, processing, and analysis. Uses machine learning to predict car prices based on data, performing regression, correlation, and EDA.",
     technologies: ["Java", "JavaFX", "MySQL", "Scene Builder"],
     github: "https://github.com/Gizele-Aydi/Car-Resale-Data-Analysis-Management-System",
   },
   {
     title: "Municipal Theater Management System",
     description:
-      "Developed a municipal theater system using Spring, enabling users to register, log in, manage bookings, and view events. Admins can perform CRUD operations on user and event data.",
+      "Developed a municipal theater system using Spring with JWT authentication, OAuth2, and email confirmation. Users can register, log in, manage bookings, and view events, while admins handle CRUD operations on users and events.",
     technologies: ["Spring", "Java", "MongoDB"],
     github: "https://github.com/Gizele-Aydi/Municipal-Theater-Services",
   },

@@ -188,7 +188,6 @@ const About = () => {
                   src="/sources/my_pic.jpg"
                   alt="Gisele"
                   fill
-                  unoptimized
                   sizes="(max-width: 768px) 100vw, 320px"
                   className="object-cover z-10 relative"
                   style={{ objectFit: "cover", objectPosition: "center" }}
