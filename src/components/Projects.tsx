@@ -1,93 +1,114 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import dynamic from "next/dynamic"
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
-
-const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), { ssr: false })
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+import { FaGithub, FaExternalLinkAlt, FaFolder } from "react-icons/fa"
 
 const projects = [
   {
     title: "Netflix BI Analysis",
-    description : ["Performs Netflix BI analysis using data from CSV, Excel, and JSON formats. The data is cleaned with Pandas and visualized with Matplotlib. Stored in a MySQL data warehouse, data modeling is performed to identify facts and create dimensions. The model is imported into Power BI, where a fact constellation schema is created and visualized through interactive dashboards."],
+    description:
+      "Performs Netflix BI analysis using data from CSV, Excel, and JSON formats. The data is cleaned with Pandas and visualized with Matplotlib. Stored in a MySQL data warehouse, data modeling is performed to identify facts and create dimensions.",
     technologies: ["Python", "Pandas", "Matplotlib", "MySQL", "Power BI"],
-    github: "https://github.com/Gizele-Aydi/Netflix-BI-analysis"
+    github: "https://github.com/Gizele-Aydi/Netflix-BI-analysis",
   },
   {
     title: "Car Resale Data Analysis Management System",
-    description: ["Manages used car resale data through a Java-based system, enabling data upload, cleaning, processing, and analysis. The system performs regression, correlation, and exploratory data analysis (EDA), with visualizations displayed on a user-friendly interface. Additionally, it features a machine learning model for predicting the resale price of a car based on specific attributes provided by the user."],
+    description:
+      "Manages used car resale data through a Java-based system, enabling data upload, cleaning, processing, and analysis. The system performs regression, correlation, and exploratory data analysis (EDA).",
     technologies: ["Java", "JavaFX", "MySQL", "Scene Builder"],
     github: "https://github.com/Gizele-Aydi/Car-Resale-Data-Analysis-Management-System",
   },
   {
     title: "Municipal Theater Management System",
-    description: ["Developed a municipal theater system using Spring, enabling users to register, log in, manage bookings, and view events. Admins can perform CRUD operations on user and event data. Features include JWT authentication, role-based access, OAuth2 Google login, and encrypted passwords. Email confirmation is sent upon registration."],
+    description:
+      "Developed a municipal theater system using Spring, enabling users to register, log in, manage bookings, and view events. Admins can perform CRUD operations on user and event data.",
     technologies: ["Spring", "Java", "MongoDB"],
     github: "https://github.com/Gizele-Aydi/Municipal-Theater-Services",
   },
 ]
 
 const Projects = () => {
-  const [isMounted, setIsMounted] = useState(false)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
 
-  if (!isMounted) {
-    return null
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   }
 
   return (
-    <section id="projects" className="py-20">
-      <MotionDiv
-        className="text-3xl font-bold mb-8"
+    <section id="projects" className="py-20" ref={ref}>
+      <motion.h2
+        className="text-3xl font-bold mb-12 text-accent text-center"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
-        Some Things II&apos;ve Built
-      </MotionDiv>
-      <div className="grid md:grid-cols-2 gap-8">
+        Some Things I&apos;ve Built
+      </motion.h2>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         {projects.map((project, index) => (
-          <MotionDiv
+          <motion.div
             key={index}
-            className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-secondary-bg rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
           >
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-400 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
+            <div className="p-6 h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <FaFolder className="text-accent text-3xl" />
+                <div className="flex space-x-4">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-button transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaGithub size={20} />
+                  </motion.a>
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-button transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaExternalLinkAlt size={18} />
+                  </motion.a>
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-accent">{project.title}</h3>
+              <p className="text-text mb-4 flex-grow">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="bg-gray-700 text-teal-400 text-xs px-2 py-1 rounded">
+                  <span key={techIndex} className="bg-[#FAE1DD] text-text text-xs px-2 py-1 rounded">
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex space-x-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-teal-400 transition-colors"
-                >
-                  <FaGithub size={20} />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-teal-400 transition-colors"
-                >
-                  <FaExternalLinkAlt size={20} />
-                </a>
-              </div>
             </div>
-          </MotionDiv>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
