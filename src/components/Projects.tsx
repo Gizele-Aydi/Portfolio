@@ -26,6 +26,27 @@ const projects = [
     technologies: ["Spring", "Java", "MongoDB"],
     github: "https://github.com/Gizele-Aydi/Municipal-Theater-Services",
   },
+  {
+    title: "Web-Based Facial Recognition Security System",
+    description:
+      "Built a web-based MFA system with Flask, DeepFace, and bcrypt, combining facial recognition and OWASP-compliant password validation.",
+    technologies: ["Flask", "Python", "Machine Learning", "Deepface", "Facenet", "React", "PostgreSQL"],
+    //github: "https://github.com/Gizele-Aydi/Web-based-Facial-Recognition-Security-System",
+  },
+  {
+    title: "Moodify - AI Mood and Sleep Tracker App",
+    description:
+      "Developed an AI-powered mood journal app in Kotlin using Hugging Face (TensorFlow Lite), Supabase for auth/storage, and Flask backend with mood-based task spinner and sleep tracker..",
+    technologies: ["Kotlin", "Flask", "Python", "TensorFlow Lite", "HuggingFace"],
+    //github: "https://github.com/Gizele-Aydi/Advanced-Programming-Project",
+  },
+  {
+    title: "Bayesian Network Optimizer with ABC Algorithm",
+    description:
+      "Developed a municipal theater system using Spring with JWT authentication, OAuth2, and email confirmation. Users can register, log in, manage bookings, and view events, while admins handle CRUD operations on users and events.",
+    technologies: ["ABC Algorithm", "BN", "Flask", "Python"],
+    //github: "",
+  }
 ]
 
 const Projects = () => {
