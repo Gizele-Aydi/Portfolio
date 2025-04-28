@@ -43,7 +43,7 @@ const projects = [
   {
     title: "Bayesian Network Optimizer with ABC Algorithm",
     description:
-      "Developed a municipal theater system using Spring with JWT authentication, OAuth2, and email confirmation. Users can register, log in, manage bookings, and view events, while admins handle CRUD operations on users and events.",
+      "Optimized real-world datasets using the Artificial Bee Colony algorithm. Tested on Alarm and Student datasets with Python. Performed sensitivity analysis and benchmarked against other metaheuristics.",
     technologies: ["ABC Algorithm", "BN", "Flask", "Python"],
     //github: "",
   }
