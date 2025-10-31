@@ -19,9 +19,10 @@ const Header = () => {
 
   const navItems = [
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: "/sources/Gisele Aydi Resume.pdf", external: true },
+    { name: "Resume", href: "/sources/Gisele-Aydi-CV-ANG.pdf", external: true },
   ]
 
   return (
@@ -78,4 +79,3 @@ const Header = () => {
 }
 
 export default Header
-

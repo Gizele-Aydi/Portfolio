@@ -29,23 +29,23 @@ const projects = [
   {
     title: "Web-Based Facial Recognition Security System",
     description:
-      "Built a web-based MFA system with Flask, DeepFace, and bcrypt, combining facial recognition and OWASP-compliant password validation.",
-    technologies: ["Flask", "Python", "Machine Learning", "Deepface", "Facenet", "React", "PostgreSQL"],
-    //github: "https://github.com/Gizele-Aydi/Web-based-Facial-Recognition-Security-System",
+      "Built a web-based MFA system with FastAPI, DeepFace, Facenet, bcrypt and Next.js, combining facial recognition, OWASP-compliant password validation and CAPTCHA validation.",
+    technologies: ["FastAPI", "Python", "Machine Learning", "Deepface", "Facenet", "Next.js"],
+    github: "https://github.com/Gizele-Aydi/Web-based-Facial-Recognition-Security-System",
   },
   {
     title: "Moodify - AI Mood and Sleep Tracker App",
     description:
-      "Developed an AI-powered mood journal app in Kotlin using Hugging Face (TensorFlow Lite), Supabase for auth/storage, and Flask backend with mood-based task spinner and sleep tracker..",
-    technologies: ["Kotlin", "Flask", "Python", "TensorFlow Lite", "HuggingFace"],
-    //github: "https://github.com/Gizele-Aydi/Advanced-Programming-Project",
+      "Developed an AI-powered mood journal app in Kotlin using Hugging Face and Gros, Firebase for auth/storage, with mood-based task spinner and sleep tracker.",
+    technologies: ["Kotlin", "HuggingFace", "Groq", "Firebase"],
+    github: "https://github.com/Gizele-Aydi/Advanced-Programming-Project",
   },
   {
     title: "Bayesian Network Optimizer with ABC Algorithm",
     description:
       "Optimized real-world datasets using the Artificial Bee Colony algorithm. Tested on Alarm and Student datasets with Python. Performed sensitivity analysis and benchmarked against other metaheuristics.",
-    technologies: ["ABC Algorithm", "BN", "Flask", "Python"],
-    //github: "",
+    technologies: ["ABC Algorithm", "Bayesian Networks", "Python"],
+    github: "https://github.com/Gizele-Aydi/Bayesian-Networks-Optimizer-with-ABC-Algorithm",
   }
 ]
 
@@ -105,23 +105,13 @@ const Projects = () => {
                   >
                     <FaGithub size={20} />
                   </motion.a>
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-button transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FaExternalLinkAlt size={18} />
-                  </motion.a>
                 </div>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-accent">{project.title}</h3>
               <p className="text-text mb-4 flex-grow">{project.description}</p>
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="bg-[#FAE1DD] text-text text-xs px-2 py-1 rounded">
+                  <span key={techIndex} className="bg-[#f5d6d1] text-text text-xs px-2 py-1 rounded">
                     {tech}
                   </span>
                 ))}
@@ -135,4 +125,3 @@ const Projects = () => {
 }
 
 export default Projects
-

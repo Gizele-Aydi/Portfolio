@@ -34,9 +34,9 @@ const Hero = () => {
           I work with data & technology
         </motion.h2>
         <motion.p className="text-lg sm:text-xl text-text mb-8 font-raleway" variants={itemVariants}>
-          I&apos;m a business IT student specializing in data science, analytics, and web development. Passionate about
-          turning data into insights and building intelligent digital solutions. Currently exploring machine learning
-          and AI-driven applications.
+          I&apos;m an AI developer and data science enthusiast with a background in business IT and analytics. 
+          I build intelligent systems that turn data into real-world impact—from machine learning models and NLP applications to full-stack AI integrations. 
+          Passionate about bridging the gap between data, technology, and decision-making through practical, scalable solutions.
         </motion.p>
       </motion.div>
     </section>
@@ -44,4 +44,3 @@ const Hero = () => {
 }
 
 export default Hero
-

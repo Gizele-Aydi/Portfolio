@@ -34,7 +34,7 @@ const Contact = () => {
         transition={{ duration: 0.5, delay: 0.3 }}
       >
         <motion.a
-          href="mailto:gisele.aydi@gmail.com"
+          href="mailto:aydigisele@gmail.com"
           className="flex items-center gap-2 bg-button text-text py-3 px-6 rounded-md hover:bg-button transition-transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -48,4 +48,3 @@ const Contact = () => {
 }
 
 export default Contact
-

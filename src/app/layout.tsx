@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Gisele Aydi | Portfolio",
-  description: "Personal portfolio of Gisele Aydi, a data analyst and aspiring data scientist",
+  description: "Personal portfolio of Gisele Aydi, an aspiring data scientist and AI engineer",
   icons: {
     icon: "/sources/bunny icon.jpg",
     apple: "/sources/bunny icon.jpg",
@@ -18,4 +18,3 @@ export default function RootLayout({
 }) {
   return <ClientLayout>{children}</ClientLayout>
 }
-
